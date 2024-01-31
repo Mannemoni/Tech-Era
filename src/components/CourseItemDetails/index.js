@@ -15,9 +15,11 @@ class CourseItemDetails extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
-    const response = await fetch(`https://apis.ccbp.in/te/courses/:${id}`)
+    const response = await fetch(`https://apis.ccbp.in/te/courses/${id}`)
+    console.log(response)
 
     const data = await response.json()
+    console.log(data)
     const updatedData = data.map(eachItem => ({
       id: eachItem.id,
       name: eachItem.name,

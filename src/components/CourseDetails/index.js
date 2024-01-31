@@ -16,14 +16,14 @@ class CourseDetails extends Component {
 
   getCourseData = async () => {
     const response = await fetch('https://apis.ccbp.in/te/courses')
-    const courses = await response.json()
+    const courses1 = await response.json()
+    const {courses} = courses1
 
     const formattedData = courses.map(eachItem => ({
       id: eachItem.id,
       name: eachItem.name,
       logoUrl: eachItem.logo_url,
     }))
-    console.log(formattedData)
 
     this.setState({courseData: formattedData, isLoading: false})
   }
